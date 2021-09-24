@@ -1,5 +1,6 @@
 const containerEl = document.querySelector("#container") // Get the container that we will create the grid within it
-const buttonEl = document.querySelector("#clearBtn")
+const clearBtn = document.querySelector("#clearBtn")
+// const eraserBtn = document.querySelector("#eraserBtn")
 
 function loadGrid() {
     let drawing = "" 
@@ -18,15 +19,8 @@ for (let i = 0; i < boxEl.length; i++) {
     });
 }
 
-for (let i = 0; i < boxEl.length; i++) {
-    buttonEl.addEventListener("click", function() {
-        boxEl[i].classList.remove("blackBox"); // When clicked, remove blackbox div
-    });
-}
-
-// for (let i = 0; i < boxEl.length; i++) {
-//     eraserBtm.addEventListener("mouseover", function() {
-//         boxEl[i].classList.remove("blackBox"); // When clicked, remove blackbox div
-//     });
-// }
-
+clearBtn.addEventListener("click", function() {
+    for (let i = 0; i < boxEl.length; i++) {
+        boxEl[i].classList.remove("blackBox");
+    }
+})
