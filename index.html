@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <link href="css/main.css" rel="stylesheet">
-        <title>Etch A Sketch</title>
-    </head>
-    <body>
-        <div id="container"></div><br>
-        <input type="color">
-        <button id="eraserBtn">Eraser</button>
-        <button id="clearBtn">Clear</button>
-        <button id="resetBtn">Reset</button><br><br>
-        <input type="range" id="slider" min="1" max="64">
-        <p id="sliderNum"></p>
-        <script src="index.js"></script>
-    </body>
-</html>
+    <html>
+        <head>
+            <link href="css/main.css" rel="stylesheet">
+        </head>
+        <body>
+            <div class="flexContainer">
+            </div>
+            <div class="boxSizeFlexContainer">
+                <p id="row" class="boxSizeFlexItem">16</p>
+                <p id="multi" class="boxSizeFlexItem">x</p>
+                <p id="column" class="boxSizeFlexItem">16</p>
+            </div>
+            <input type="range" id="slideRange" min="1" max="100" step="1">
+            <button id="eraserBtn">Eraser</button>
+            <button id="clearBtn">Clear</button>
+            <script src="index.js"></script>
+        </body>
+    </html>
