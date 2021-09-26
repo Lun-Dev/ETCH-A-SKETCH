@@ -1,19 +1,30 @@
 <!DOCTYPE html>
     <html>
         <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link href="css/main.css" rel="stylesheet">
         </head>
         <body>
-            <div class="flexContainer">
+            <div class=websiteFlexContainer>
+                <h1> Etch-A-Sketch</h1>
+                <div class="flexContainer">
+                </div>
+                <div class="boxSizeFlexContainer">
+                    <p id="row" class="boxSizeFlexItem">16</p>
+                    <p id="multi" class="boxSizeFlexItem">x</p>
+                    <p id="column" class="boxSizeFlexItem">16</p>
+                    <input type="range" id="slideRange" min="1" max="100" step="1">
+                </div>
+                <div class="buttonsFlexContainer">
+                    <input type="color" id="colorPicker">
+                    <button id="rainbowBtn">Rainbow</button>
+                </div>
+                <div class="toolsFlexContainer">
+                    <button id="eraserBtn">Eraser</button>
+                    <button id="clearBtn">Clear</button>
+                </div>
             </div>
-            <div class="boxSizeFlexContainer">
-                <p id="row" class="boxSizeFlexItem">16</p>
-                <p id="multi" class="boxSizeFlexItem">x</p>
-                <p id="column" class="boxSizeFlexItem">16</p>
-            </div>
-            <input type="range" id="slideRange" min="1" max="100" step="1">
-            <button id="eraserBtn">Eraser</button>
-            <button id="clearBtn">Clear</button>
             <script src="index.js"></script>
         </body>
     </html>
