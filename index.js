@@ -1,52 +1,61 @@
-const containerEl = document.querySelector("#container") // Get the container that we will create the grid within it
+const flexEl = document.querySelector(".flexContainer");
 const clearBtn = document.querySelector("#clearBtn")
 const eraserBtn = document.querySelector("#eraserBtn")
-const resetBtn = document.querySelector("#resetBtn")
+let rowEl = document.getElementById("row");
+let columnEl = document.getElementById("column");
+let rangeNumberEl = document.getElementById("slideRange");
 
 function loadGrid() {
-    let drawing = "" 
-    for (let i = 0; i < 256; i++) {
-        drawing += `<div id=box></div>`
+    let drawRow = ""
+    let drawColumn = ""
+
+    for(let i = 0;i < rowEl.innerText; i++) {
+        drawRow += `<div class="inInnerbox"></div>`
     }
-    containerEl.innerHTML = drawing // Manipulate the DOM in one go after we concatenated the for loop above
+    for(let i = 0;i < columnEl.innerText; i++) {
+        drawColumn += `<div class="innerBox">${drawRow}</div>`
+    }
+    flexEl.innerHTML = drawColumn;
 }
 
 function mouseOver() {
     for (let i = 0; i < boxEl.length; i++) {
         boxEl[i].addEventListener("mouseover", function() {
-            boxEl[i].classList.add("blackBox"); // When mouseover, add blackbox div
+            boxEl[i].classList.add("colorBox"); // When mouseover, add blackbox div
         });
     };
 };
-    
+
 function clearBox() {
     clearBtn.addEventListener("click", function() {
         for (let i = 0; i < boxEl.length; i++) {
-            boxEl[i].classList.remove("blackBox");
+            boxEl[i].classList.remove("colorBox");
         }
     });
 };
 
-function reset() {
-    resetBtn.addEventListener("click", function() {
-        mouseOver()
-    })
-};
-    
+rangeNumberEl.addEventListener("input", function() {
+    row.innerText = this.value;
+    column.innerText = this.value;
+    loadGrid()
+    boxEl = document.querySelectorAll(".inInnerbox")
+    mouseOver()
+})
+
 loadGrid()
-const boxEl = document.querySelectorAll("#box") // Get the new box div
+let boxEl = document.querySelectorAll(".inInnerbox")
 mouseOver()
 clearBox()
 eraseBox()
-reset()
 
 function eraseBox() {
     eraserBtn.addEventListener("click", function() {
         for (let i = 0; i < boxEl.length; i++) {
             boxEl[i].addEventListener("mouseover", function() {
-                boxEl[i].classList.remove("blackBox"); 
+                boxEl[i].classList.remove("colorBox"); 
             })
         }
     });
 };
+
 
