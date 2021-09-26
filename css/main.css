@@ -1,23 +1,28 @@
-body {
-    margin: 10px;
-    padding: 10px;
-}
-
-#container {
+.flexContainer {
     display: flex;
     flex-direction: row;
+    border: 1px solid black;
     width: 500px;
     height: 500px;
-    flex-wrap: wrap;
 }
 
-#box {
+.innerBox {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 100%;
+}
+
+.inInnerbox {
     border: 1px solid black;
-    width: 28px;
-    height: 30px;
+    flex: 1 1 100%;
 }
 
-.blackBox {
-     background-color: black;
- }
+.colorBox {
+    background-color: black;
+}
 
+.boxSizeFlexContainer {
+    display: flex;
+    width: 500px;
+    gap: 10px;
+}
